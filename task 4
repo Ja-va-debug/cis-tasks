@@ -1,0 +1,58 @@
+using System;
+namespace oop_task_1_cis
+{   class Car
+    {
+        string model;
+        string brand;
+        int year;
+
+        public string Model
+        { set { model = value; }
+            get { return model; }
+
+        }
+        public string Brand
+        { set { brand = value; }
+        get { return brand; }
+        }
+
+        public int Year
+        {
+            set
+            {
+                if (value < 1886)
+                {
+                    Console.WriteLine("Year cannot be less than 1886");
+                }
+                else
+                {
+                    year = value;
+                }
+            }
+            get { return year; }
+        }
+public void Print()
+        {
+            Console.WriteLine("Brand: " + brand);
+            Console.WriteLine("Model: " + model);
+            Console.WriteLine("Year: " + year);
+        }
+
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        { Car c1 = new Car();
+            Console.WriteLine("Please enter the car brand");
+            c1.Brand = Console.ReadLine();
+            Console.WriteLine("Please enter the car model");
+            c1.Model = Console.ReadLine();
+            Console.WriteLine("Please enter the car year");
+            c1.Year= int.Parse(Console.ReadLine());
+            c1.Print();
+
+
+        }
+         
+    }
+}
